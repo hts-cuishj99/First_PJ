@@ -8,7 +8,7 @@ jobs:
       - run:
           name: Login to Dev Hub
           command:
-            sfdx force:auth:jwt:grant -i $DEVHUB_CONSUMER_KEY -f ./data/key64.pem -u $DEVHUB_USER_NAME -d -a DevHub-HTS
+            sfdx force:auth:jwt:grant -i $DEVHUB_CONSUMER_KEY -d -a DevHub-HTS -f ./.circleci/server.key -u $DEVHUB_USER_NAME
       - run:
           name: List Connected Orgs
           command: sfdx force:org:list
